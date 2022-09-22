@@ -13,7 +13,8 @@
     "incremental": true,
     "paths": {
       "@services/*":["src/services/*"],
-      "@controllers/*":["src/controllers/*"]
+      "@controllers/*":["src/controllers/*"],
+      "@entities/*":["src/models/entities/*"]
     }
   }
 }
