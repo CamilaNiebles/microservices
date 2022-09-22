@@ -12,4 +12,7 @@ export class CustomerService {
   async create(customer: any) {
     return this.customerRepository.save(customer);
   }
+  async getById(id) {
+    return this.customerRepository.findOneBy({ id });
+  }
 }
