@@ -12,6 +12,6 @@ export class Customer {
   @Column()
   lastName: string;
 
-  @OneToMany(() => Order, (order) => order.customer)
+  @OneToMany(() => Order, (order) => order.customerId)
   orders: Order[];
 }
