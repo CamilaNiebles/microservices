@@ -13,5 +13,5 @@ export class Order {
   total: number;
 
   @ManyToOne(() => Customer, (customer) => customer.orders)
-  customer: Customer;
+  customerId: Customer;
 }
