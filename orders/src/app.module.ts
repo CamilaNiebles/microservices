@@ -6,6 +6,7 @@ import schemaObject from '@config/schemaValidation';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfigService } from '@config/typeOrm.service';
 import { OrdersModule } from './orders.module';
+import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
   imports: [
@@ -14,6 +15,20 @@ import { OrdersModule } from './orders.module';
       useClass: TypeOrmConfigService,
       inject: [TypeOrmConfigService],
     }),
+    ClientsModule.register([
+      {
+        name: 'events-ftgo',
+        transport: Transport.KAFKA,
+        options: {
+          client: {
+            brokers: ['localhost:29092'],
+          },
+          consumer: {
+            groupId: 'this-id-is-unique',
+          },
+        },
+      },
+    ]),
     OrdersModule,
   ],
   controllers: [AppController],
