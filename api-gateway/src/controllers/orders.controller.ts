@@ -10,6 +10,9 @@ export class OrderController {
 
   @Get()
   get() {
-    return this.clientKafka.emit('ftgo.orders', { foo: 'bar' });
+    return this.clientKafka.emit('ftgo.orders', {
+      foo: 'bar',
+      date: new Date().toString(),
+    });
   }
 }
