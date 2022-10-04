@@ -7,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 import schemaObject from '@config/schemaValidation';
 import { CustomersModule } from './customers.module';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { CreditsModule } from './credits.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       },
     ]),
     CustomersModule,
+    CreditsModule,
   ],
   controllers: [AppController],
   providers: [AppService, TypeOrmConfigService],
