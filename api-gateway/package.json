@@ -1,5 +1,5 @@
 {
-  "name": "orders",
+  "name": "api-gateway",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -22,18 +22,13 @@
   },
   "dependencies": {
     "@nestjs/common": "^9.1.2",
-    "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.1.2",
     "@nestjs/microservices": "^9.1.2",
     "@nestjs/platform-express": "^9.1.2",
-    "@nestjs/typeorm": "^9.0.1",
-    "joi": "^17.6.1",
     "kafkajs": "^2.2.0",
-    "pg": "^8.8.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7",
-    "typeorm": "^0.3.10"
+    "rxjs": "^7"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.5.6",
