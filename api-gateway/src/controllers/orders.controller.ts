@@ -1,18 +1,13 @@
-import { Controller, Get, Inject } from '@nestjs/common';
-import { ClientKafka } from '@nestjs/microservices';
+import { Body, Controller, Post } from '@nestjs/common';
+import { OrderService } from '@services/order.service';
+import { CreateOrderDto } from 'src/models/dto/createOrder.dto';
 
 @Controller('orders')
 export class OrderController {
-  constructor(
-    @Inject('events-ftgo')
-    private readonly clientKafka: ClientKafka,
-  ) {}
+  constructor(private readonly orderService: OrderService) {}
 
-  @Get()
-  get() {
-    return this.clientKafka.emit('ftgo.orders', {
-      foo: 'bar',
-      date: new Date().toString(),
-    });
+  @Post()
+  create(@Body() createOrderDto: CreateOrderDto) {
+    return this.orderService.createOrder(createOrderDto);
   }
 }

@@ -24,7 +24,7 @@ export class OrderController {
     const eventMessage = context.getMessage();
     const { value: response } = eventMessage;
     console.log(
-      `Receiving a new message from topic: medium.rocks: ` +
+      `Receiving a new message from topic: ftgo.orders: ` +
         JSON.stringify(response),
     );
     return response;
